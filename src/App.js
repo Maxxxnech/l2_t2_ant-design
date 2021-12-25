@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import Header from "./components/Header";
+import InpitNumber from "./components/InputNumber";
+import sumNatural from "./sumNatural";
+import React, { useState } from "react";
 import './App.css';
 
 function App() {
+  var def = 1;
+  const [num, setNum] = useState(def);
+
+  function onChange(value) {
+    setNum(value);
+    console.log("changed", value, num);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="main">
+        <InpitNumber def={def} onChange={onChange} />
+        <span className="output">
+          Сумма первых {num} натуральных чисел: <span className="result">{sumNatural(num)}</span>
+        </span>
+      </div>
+    </>
   );
 }
 
