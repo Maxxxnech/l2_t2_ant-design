@@ -1,5 +1,7 @@
 import { InputNumber } from "antd";
 
-export default function ({def, onChange}) {
+function Input({def, onChange}) {
   return <InputNumber min={1} defaultValue={def} onChange={onChange} />;
 }
+
+export default Input

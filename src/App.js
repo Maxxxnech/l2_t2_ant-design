@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import './App.css';
 
 function App() {
-  var def = 1;
+  var def = 2;
   const [num, setNum] = useState(def);
 
   function onChange(value) {
